@@ -71,20 +71,14 @@ export const sendDirectMessage = async (bot: Bot, userId: bigint, message: Creat
 export const infoEmbed: Embed = {
 	color: infoColor2,
 	title: `${config.name}, the LFG bot`,
-	description: `${config.name} is developed by Ean AKA Burn_E99.
+	description: `${config.name} is developed by PowershellNinja.
 Want to check out my source code?  Check it out [here](${config.links.sourceCode}).
-Need help with this bot?  Join my support server [here](${config.links.supportServer}).
 
-Ran into a bug?  Report it to my developers using \`/${reportSlashName} [issue description]\`.`,
+Ran into a bug?  Report it to my developers by creating an Issue in the Github Repository.`,
 	fields: [{
 		name: 'Privacy Policy and Terms of Service:',
 		value: `**${config.name} does not automatically track or collect user information via Discord.**
-
-${config.name} stores data relating to events, event channels, and text from the \`/${reportSlashName}\` command.
-
-For more details, please check out the Privacy Policy on my GitHub [here](${config.links.sourceCode}/blob/master/PRIVACY.md)
-
-Terms of Service can also be found on my GitHub [here](${config.links.sourceCode}/blob/master/TERMS.md).`,
+${config.name} stores data relating to events, event channels, and text from the \`/${reportSlashName}\` command.`,
 	}],
 	footer: {
 		text: `Current Version: ${config.version}`,

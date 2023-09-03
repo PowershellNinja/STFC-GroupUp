@@ -31,6 +31,7 @@ Note: The `MANAGE_GUILD`, `MANAGE_CHANNELS`, and `MANAGE_ROLES` permissions are 
 
 ## Self Hosting STFC-GroupUp
 STFC-GroupUp is built on [Deno](https://deno.land/) `v1.33.1` using [Discordeno](https://discordeno.mod.land/) `v17.0.1`.  If you choose to run this yourself, you will need to rename `config.example.ts` to `config.ts` and edit some values.  You will need to create a new [Discord Application](https://discord.com/developers/applications) and copy the newly generated token into the `"token"` field.  If you want to utilize some of the bots dev features, you will need to fill in the keys `"logChannel"` and `"reportChannel"` with text channel IDs and `"devServer"` with a guild ID.
+The Discord Application Bot also needs the "Privileged Gateway Intent": "MESSAGE CONTENT INTENT".
 
 You will also need to install and setup a MySQL database with a user for the bot to use to add/modify the database.  This user must have the `"DB Manager"` admin rights and `"REFERENCES"` Global Privileges.  Once the DB is installed and a user is setup, run the provided `db\initialize.ts` to create the schema and tables.  After this, run `db\populateDefaults.ts` to insert some needed values into the tables.
 
