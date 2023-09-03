@@ -8,219 +8,59 @@ export type Activity = {
 // Max depth is limited to 4, 5th component row must be reserved for the custom button
 export const Activities: Array<Activity> = [
 	{
-		name: 'Destiny 2',
+		name: 'STFC',
 		options: [
 			{
-				name: 'Raids',
+				name: 'Group Armada',
 				options: [
 					{
-						name: 'Root of Nightmares',
+						name: 'Uncommon',
 						maxMembers: 6,
 					},
 					{
-						name: 'King\'s Fall',
+						name: 'Rare',
 						maxMembers: 6,
 					},
 					{
-						name: 'Vow of the Disciple',
-						maxMembers: 6,
-					},
-					{
-						name: 'Vault of Glass',
-						maxMembers: 6,
-					},
-					{
-						name: 'Deep Stone Crypt',
-						maxMembers: 6,
-					},
-					{
-						name: 'Garden of Salvation',
-						maxMembers: 6,
-					},
-					{
-						name: 'Last Wish',
+						name: 'Epic',
 						maxMembers: 6,
 					},
 				],
 			},
 			{
-				name: 'Dungeons',
+				name: 'Formation Armada',
 				options: [
 					{
-						name: 'Ghosts of the Deep',
-						maxMembers: 3,
+						name: 'Uncommon',
+						maxMembers: 12,
 					},
 					{
-						name: 'Spire of the Watcher',
-						maxMembers: 3,
-					},
-					{
-						name: 'Duality',
-						maxMembers: 3,
-					},
-					{
-						name: 'Grasp of Avarice',
-						maxMembers: 3,
-					},
-					{
-						name: 'Prophecy',
-						maxMembers: 3,
-					},
-					{
-						name: 'Pit of Heresy',
-						maxMembers: 3,
-					},
-					{
-						name: 'Shattered Throne',
-						maxMembers: 3,
-					},
-				],
-			},
-			{
-				name: 'Crucible',
-				options: [
-					{
-						name: 'Crucible Labs',
-						maxMembers: 6,
-					},
-					{
-						name: 'Competitive',
-						maxMembers: 3,
-					},
-					{
-						name: 'Clash',
-						maxMembers: 6,
-					},
-					{
-						name: 'Weekly Mode',
-						maxMembers: 3,
-					},
-					{
-						name: 'Iron Banner',
-						maxMembers: 6,
-					},
-					{
-						name: 'Trials of Osiris',
-						maxMembers: 3,
-					},
-					{
-						name: 'Private Match',
+						name: 'Rare',
 						maxMembers: 12,
 					},
 				],
 			},
 			{
-				name: 'Gambit',
+				name: 'Territory Takeover',
 				options: [
 					{
-						name: 'Classic',
-						maxMembers: 4,
+						name: 'Attack',
+						maxMembers: 999,
 					},
 					{
-						name: 'Private Match',
-						maxMembers: 8,
+						name: 'Defense',
+						maxMembers: 999,
 					},
 				],
 			},
 			{
-				name: 'Vanguard',
+				name: 'Infinite Incursion',
 				options: [
 					{
-						name: 'Vanguard Ops',
-						maxMembers: 3,
-					},
-					{
-						name: 'Nightfall',
-						maxMembers: 3,
-					},
-					{
-						name: 'Grandmaster Nightfall',
-						maxMembers: 3,
+						name: 'I moved my base out of territory and shielded',
+						maxMembers: 999,
 					},
 				],
-			},
-			{
-				name: 'Exotic Missions',
-				options: [
-					{
-						name: '//node.ovrd.AVALON//',
-						maxMembers: 3,
-					},
-				],
-			},
-			{
-				name: 'Miscellaneous/Seasonal',
-				options: [
-					{
-						name: 'Fishing',
-						maxMembers: 3,
-					},
-					{
-						name: 'Deep Dive',
-						maxMembers: 3,
-					},
-					{
-						name: 'Salvage',
-						maxMembers: 6,
-					},
-					{
-						name: 'Defiant Battlegrounds',
-						maxMembers: 3,
-					},
-					{
-						name: 'Terminal Overload',
-						maxMembers: 12,
-					},
-					{
-						name: 'Vex Incursion Zone',
-						maxMembers: 12,
-					},
-					{
-						name: 'Partition: Ordnance',
-						maxMembers: 3,
-					},
-					{
-						name: 'Lightfall Campaign Mission',
-						maxMembers: 3,
-					},
-					{
-						name: 'Weekly Witch Queen Campaign Mission',
-						maxMembers: 3,
-					},
-					{
-						name: 'Wellspring',
-						maxMembers: 6,
-					},
-					{
-						name: 'Dares of Eternity',
-						maxMembers: 6,
-					},
-					{
-						name: 'Wrathborn Hunt',
-						maxMembers: 3,
-					},
-					{
-						name: 'Empire Hunt',
-						maxMembers: 3,
-					},
-				],
-			},
-		],
-	},
-	{
-		name: 'Among Us',
-		options: [
-			{
-				name: 'Vanilla',
-				maxMembers: 15,
-			},
-			{
-				name: 'Hide n Seek',
-				maxMembers: 15,
-			},
-			{
-				name: 'Modded',
-				maxMembers: 15,
 			},
 		],
 	},
