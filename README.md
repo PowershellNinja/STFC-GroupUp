@@ -1,22 +1,14 @@
-# Group Up - An Event Scheduling Discord Bot | V1.0.3 - 2022/05/26
-[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg)](https://sonarcloud.io/summary/new_code?id=GroupUp)  
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=GroupUp&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=GroupUp) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=GroupUp&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=GroupUp) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=GroupUp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=GroupUp) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=GroupUp&metric=bugs)](https://sonarcloud.io/summary/new_code?id=GroupUp) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=GroupUp&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=GroupUp) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=GroupUp&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=GroupUp)  
+# STFC Group Up - An Event Scheduling Discord Bot | V1.0.0
 
-Group Up is a Discord bot built for scheduling events in your Guild.  The bot utilizes user-friendly Buttons, Slash Commands, and Forms to create events.  Currently, Group Up has built in support for Destiny 2 and Among Us, but any event can be created for any game using the Create Custom Activity button.
+STFC-Group Up is a Discord bot built for scheduling events in your alliance.  The bot utilizes user-friendly Buttons, Slash Commands, and Forms to create events.
 
-This bot was originally designed to replace the less reliable event scheduling provided by the Destiny 2 bot, Charlemagne, utilizing new Discord features many months before Charlemagne did.
+The Bot code is based on https://github.com/Burn-E99/GroupUp and adjusted for organizing activities in Star Trek Fleet Command like Armadas and Territory Takeovers.
+Other than the original GroupUp bot, there is no public hosting of this bot - you are free to take the code and run your own instance of it though!
 
 ## Using Group Up
-I am hosting this bot for public use and you may find its invite link below.  If you would like to host this bot yourself, details of how to do so are found at the end of this README, but I do not recommend this unless you are experienced with running Discord bots.
-
 After inviting the bot, if you want to create a dedicated event channel, simply run `/setup` in the desired channel and follow the on-screen prompts.  If you don't want a dedicated channel, just run `/create-event` anywhere.
 
 Note: The `MANAGE_GUILD`, `MANAGE_CHANNELS`, and `MANAGE_ROLES` permissions are only necessary for the `/setup` command.  Once you create all of the event channel that you need, you may remove these permissions from the bot without causing any issues.
-
-[Bot Invite Link](https://discord.com/api/oauth2/authorize?client_id=847256159123013722&permissions=268527664&scope=bot%20applications.commands)
-
-[Support Server Invite Link](https://discord.gg/peHASXMZYv)
-
 ---
 
 ## Available Commands
@@ -37,26 +29,18 @@ Note: The `MANAGE_GUILD`, `MANAGE_CHANNELS`, and `MANAGE_ROLES` permissions are 
 * `/event [options]` **ONLY Available to Guild Members with a Group Up Manager role in a managed Event Channel**
   * Allows Group Up Managers to Join/Leave/Alternate members to events
 
-## Problems?  Feature requests?
-If you run into any errors or problems with the bot, or think you have a good idea to add to the bot, please submit a new GitHub issue detailing it.  If you don't have a GitHub account, a report command (detailed above) is provided for use in Discord.
-
----
-
-## Self Hosting Group Up
-Group Up is built on [Deno](https://deno.land/) `v1.33.1` using [Discordeno](https://discordeno.mod.land/) `v17.0.1`.  If you choose to run this yourself, you will need to rename `config.example.ts` to `config.ts` and edit some values.  You will need to create a new [Discord Application](https://discord.com/developers/applications) and copy the newly generated token into the `"token"` field.  If you want to utilize some of the bots dev features, you will need to fill in the keys `"logChannel"` and `"reportChannel"` with text channel IDs and `"devServer"` with a guild ID.
+## Self Hosting STFC-GroupUp
+STFC-GroupUp is built on [Deno](https://deno.land/) `v1.33.1` using [Discordeno](https://discordeno.mod.land/) `v17.0.1`.  If you choose to run this yourself, you will need to rename `config.example.ts` to `config.ts` and edit some values.  You will need to create a new [Discord Application](https://discord.com/developers/applications) and copy the newly generated token into the `"token"` field.  If you want to utilize some of the bots dev features, you will need to fill in the keys `"logChannel"` and `"reportChannel"` with text channel IDs and `"devServer"` with a guild ID.
 
 You will also need to install and setup a MySQL database with a user for the bot to use to add/modify the database.  This user must have the `"DB Manager"` admin rights and `"REFERENCES"` Global Privileges.  Once the DB is installed and a user is setup, run the provided `db\initialize.ts` to create the schema and tables.  After this, run `db\populateDefaults.ts` to insert some needed values into the tables.
 
-DB User needs all permissions + GRANT SYSTEM_USER ON *.* TO stfcgroupup
+DB User needs Schema Permissions too before running the commands. 
+GRANT SYSTEM_USER ON *.* TO stfcgroupup
 Then run deno run --allow-all .\initialize.ts and deno run --allow-all .\populateDefaults.ts
 
 Once everything is set up, starting the bot can simply be done with `deno run --allow-write=./logs --allow-net .\mod.ts`.
 
 ---
 
-## Privacy Policy and Terms of Service
-Group Up has a Privacy Policy and Terms of Service to detail expectations of what user data is stored and how users should use Group Up.  The following Privacy Policy and Terms of Service only apply to the officially hosted version of Group Up (`Group Up#1305`, Discord ID: `847256159123013722`).
+The code in this repository is provided as-is and no 
 
-Privacy Policy TL;DR: Group Up stores data relating to events, event channels, and text from the `/report` command.  For more detailed information, please check out the full [PRIVACY POLICY](https://github.com/Burn-E99/TheArtificer/blob/master/PRIVACY.md).
-
-Terms of Service TL;DR: Don't abuse or attempt to hack/damage Group Up.  If you do, you may be banned from use.  For more detailed information, please check out the full [TERMS OF SERVICE](https://github.com/Burn-E99/TheArtificer/blob/master/TERMS.md).
