@@ -1,6 +1,5 @@
-config.ts
 logs
-
+config.ts
 db/update.ts
-
 deno.lock
+.vscode/

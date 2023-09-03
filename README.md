@@ -47,6 +47,9 @@ Group Up is built on [Deno](https://deno.land/) `v1.33.1` using [Discordeno](htt
 
 You will also need to install and setup a MySQL database with a user for the bot to use to add/modify the database.  This user must have the `"DB Manager"` admin rights and `"REFERENCES"` Global Privileges.  Once the DB is installed and a user is setup, run the provided `db\initialize.ts` to create the schema and tables.  After this, run `db\populateDefaults.ts` to insert some needed values into the tables.
 
+DB User needs all permissions + GRANT SYSTEM_USER ON *.* TO stfcgroupup
+Then run deno run --allow-all .\initialize.ts and deno run --allow-all .\populateDefaults.ts
+
 Once everything is set up, starting the bot can simply be done with `deno run --allow-write=./logs --allow-net .\mod.ts`.
 
 ---
