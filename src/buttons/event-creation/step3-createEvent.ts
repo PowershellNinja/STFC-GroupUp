@@ -17,6 +17,7 @@ const execute = async (bot: Bot, interaction: Interaction) => {
 			utils.commonLoggers.dbError('step3-createEvent.ts', 'call sproc INC_CNT on', e)
 		);
 
+		utils.commonLoggers.logMessage('step3-createEvents.ts:20', 'Deleting Token Early');
 		deleteTokenEarly(bot, interaction, interaction.guildId, interaction.channelId, interaction.member.id);
 
 		// Get OwnerId and EventTime from embed for DB
