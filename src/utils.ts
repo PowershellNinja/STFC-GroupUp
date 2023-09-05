@@ -38,6 +38,8 @@ const channelUpdateError = (location: string, message: string, err: Error) => lo
 
 const dbError = (location: string, type: string, err: Error) => log(LT.ERROR, `${location} | Failed to ${type} database | Error: ${err.name} - ${err.message}`);
 
+const logMessage = (location: string, message: string) => log(LT.INFO, `${location} | Message: ${message}`);
+
 export default {
 	capitalizeFirstChar,
 	commonLoggers: {
@@ -50,6 +52,7 @@ export default {
 		messageDeleteError,
 		reactionAddError,
 		reactionDeleteError,
+		logMessage,
 	},
 	jsonStringifyBig,
 	messageUrlToIds,
