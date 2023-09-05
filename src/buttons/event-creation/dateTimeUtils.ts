@@ -167,7 +167,7 @@ export const getDateFromRawInput = (rawEventTime: string, rawEventTimeZone: stri
 	const parsedDateTime = new Date(`${parsedEventMonth} ${parsedEventDay}, ${parsedEventYear} ${parsedEventTimeHours}:${parsedEventTimeMinutes} ${parsedEventTimePeriod} ${parsedEventTimeZone}`);
 	return [
 		parsedDateTime,
-		`${parsedEventTimeHours}${parsedEventTimePeriod ? ':' : ''}${parsedEventTimeMinutes} ${parsedEventTimePeriod} ${userInputTimeZone} ${parsedEventMonth.slice(0, 1)}${
+		`${parsedEventTimeHours}${parsedEventTimePeriod ? '' : ':'}${parsedEventTimeMinutes} ${parsedEventTimePeriod} ${userInputTimeZone} ${parsedEventMonth.slice(0, 1)}${
 			parsedEventMonth.slice(1, 3).toLowerCase()
 		} ${parsedEventDay}, ${parsedEventYear}`,
 		parsedDateTime.getTime() > new Date().getTime(),
