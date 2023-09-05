@@ -11,6 +11,7 @@ export const customId = 'verifyCustomActivity';
 
 const execute = async (bot: Bot, interaction: Interaction) => {
 	if (interaction.data?.components?.length && interaction.guildId && interaction.channelId && interaction.member) {
+		utils.commonLoggers.logMessage('step1b-verifyCustomActivity.ts:14', 'Deleting Token Early');
 		await deleteTokenEarly(bot, interaction, interaction.guildId, interaction.channelId, interaction.member.id);
 		// Parse out our data
 		const tempDataMap: Map<string, string> = new Map();
