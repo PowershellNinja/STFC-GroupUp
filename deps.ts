@@ -23,6 +23,9 @@ export {
 	OverwriteTypes,
 	startBot,
 	TextStyles,
+	delay,
+	HTTPResponseCodes,
+	BASE_URL
 } from 'https://deno.land/x/discordeno@17.0.1/mod.ts';
 export type {
 	ActionRow,
@@ -43,6 +46,8 @@ export type {
 	PermissionStrings,
 	SelectMenuComponent,
 	SelectOption,
+	RestManager,
+	RequestMethod
 } from 'https://deno.land/x/discordeno@17.0.1/mod.ts';
 
 export { Client } from 'https://deno.land/x/mysql@v2.11.0/mod.ts';
