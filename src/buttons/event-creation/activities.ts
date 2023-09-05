@@ -14,15 +14,15 @@ export const Activities: Array<Activity> = [
 				name: 'Group Armada',
 				options: [
 					{
-						name: 'Uncommon',
+						name: 'Group Armada - Uncommon',
 						maxMembers: 6,
 					},
 					{
-						name: 'Rare',
+						name: 'Group Armada - Rare',
 						maxMembers: 6,
 					},
 					{
-						name: 'Epic',
+						name: 'Group Armada - Epic',
 						maxMembers: 6,
 					},
 				],
@@ -31,11 +31,11 @@ export const Activities: Array<Activity> = [
 				name: 'Formation Armada',
 				options: [
 					{
-						name: 'Uncommon',
+						name: 'Formation Armada - Uncommon',
 						maxMembers: 12,
 					},
 					{
-						name: 'Rare',
+						name: 'Formation Armada - Rare',
 						maxMembers: 12,
 					},
 				],
@@ -44,11 +44,11 @@ export const Activities: Array<Activity> = [
 				name: 'Territory Takeover',
 				options: [
 					{
-						name: 'Attack',
+						name: 'Territory Takeover - Attack',
 						maxMembers: 999,
 					},
 					{
-						name: 'Defense',
+						name: 'Territory Takeover - Defense',
 						maxMembers: 999,
 					},
 				],
@@ -57,7 +57,7 @@ export const Activities: Array<Activity> = [
 				name: 'Infinite Incursion',
 				options: [
 					{
-						name: 'I moved my base out of territory and shielded',
+						name: 'Infinite Incursion - I moved my base out of territory and shielded',
 						maxMembers: 999,
 					},
 				],
