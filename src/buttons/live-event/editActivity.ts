@@ -46,6 +46,7 @@ const execute = async (bot: Bot, interaction: Interaction) => {
 		const finalizedIdxPath = valuesIdxPath.substring(0, valuesIdxPath.lastIndexOf(pathIdxEnder));
 		if (interaction.data?.values?.[0].endsWith(pathIdxEnder) || (interaction.data?.components && interaction.data.components.length > 0)) {
 			// User selected activity, give them the confirmation message and delete the selectMenus
+			utils.commonLoggers.logMessage('editActivity.ts:49', 'Deleting Token Early');
 			await deleteTokenEarly(bot, interaction, interaction.guildId, interaction.channelId, interaction.member.id);
 
 			// Fill in the activity details
@@ -115,6 +116,7 @@ const execute = async (bot: Bot, interaction: Interaction) => {
 			// Get event to apply edit
 			const eventMessage = await bot.helpers.getMessage(evtChannelId, evtMessageId).catch((e: Error) => utils.commonLoggers.messageGetError('editActivity.ts', 'get eventMessage', e));
 			if (eventMessage?.embeds[0].fields) {
+				utils.commonLoggers.logMessage('editActivity.ts:119', 'Deleting Token Early');
 				await deleteTokenEarly(bot, interaction, interaction.guildId, interaction.channelId, interaction.member.id);
 				// Update member lists
 				const [currentMemberCount, _oldMaxMemberCount] = getEventMemberCount(eventMessage.embeds[0].fields[LfgEmbedIndexes.JoinedMembers].name);
@@ -188,6 +190,7 @@ const execute = async (bot: Bot, interaction: Interaction) => {
 			dbClient.execute(queries.callIncCnt('btn-eeChangeAct')).catch((e) => utils.commonLoggers.dbError('editActivity.ts', 'call sproc INC_CNT on', e));
 
 			// Delete old token entry if it exists
+			utils.commonLoggers.logMessage('editActivity.ts:193', 'Deleting Token Early');
 			await deleteTokenEarly(bot, interaction, interaction.guildId, interaction.channelId, interaction.member.id);
 
 			// Store token for later use

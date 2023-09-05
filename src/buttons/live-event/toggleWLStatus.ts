@@ -10,6 +10,7 @@ export const customId = 'toggleWLStatus';
 
 const execute = async (bot: Bot, interaction: Interaction) => {
 	if (interaction.data?.customId && interaction.member && interaction.channelId && interaction.guildId) {
+		utils.commonLoggers.logMessage('toggleWLStatus.ts:13', 'Deleting Token Early');
 		deleteTokenEarly(bot, interaction, interaction.guildId, interaction.channelId, interaction.member.id);
 		const makeWhitelisted = interaction.data.customId.endsWith(pathIdxEnder);
 		dbClient.execute(queries.callIncCnt(makeWhitelisted ? 'btn-eeMakeWL' : 'btn-eeMakePublic')).catch((e) => utils.commonLoggers.dbError('toggleWLStatus.ts', 'call sproc INC_CNT on', e));

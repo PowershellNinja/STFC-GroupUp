@@ -19,6 +19,7 @@ export const addTokenToMap = (bot: Bot, interaction: Interaction, guildId: bigin
 		token: interaction.token,
 		timeoutId: setTimeout(
 			(guildId, channelId, userId) => {
+				utils.commonLoggers.logMessage('tokenCleanup.ts:22', 'Deleting Token Early');
 				deleteTokenEarly(bot, interaction, guildId, channelId, userId).catch((e) => utils.commonLoggers.interactionSendError('tokenCleanup.ts:addTokenToMap', interaction, e));
 			},
 			tokenTimeoutMS,

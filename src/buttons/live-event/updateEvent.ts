@@ -11,6 +11,7 @@ export const customId = 'updateEvent';
 
 const execute = async (bot: Bot, interaction: Interaction) => {
 	if (interaction.data?.customId && interaction.member?.user && interaction.channelId && interaction.guildId && interaction.message?.embeds[0].fields) {
+		utils.commonLoggers.logMessage('updateEvents.ts:14', 'Deleting Token Early');
 		deleteTokenEarly(bot, interaction, interaction.guildId, interaction.channelId, interaction.member.id);
 
 		const lfgChannelSetting = lfgChannelSettings.get(generateGuildSettingKey(interaction.guildId, interaction.channelId)) || {
