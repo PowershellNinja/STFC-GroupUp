@@ -8,7 +8,7 @@ import { addTokenToMap, deleteTokenEarly, generateMapId, selfDestructMessage, to
 import utils from '../../utils.ts';
 import { customId as createCustomActivityBtnId } from './step1a-openCustomModal.ts';
 import { customId as finalizeEventBtnId } from './step2-finalize.ts';
-import { monthsShort, isDSTActive } from './dateTimeUtils.ts';
+import { isDSTActive, monthsShort } from './dateTimeUtils.ts';
 import { dbClient, queries } from '../../db.ts';
 import { createEventSlashName } from '../../commands/slashCommandNames.ts';
 
@@ -52,7 +52,7 @@ const execute = async (bot: Bot, interaction: Interaction) => {
 			if (interaction.message?.embeds[0].fields && interaction.message.embeds[0].fields[LfgEmbedIndexes.StartTime].name === lfgStartTimeName) {
 				if (interaction.message.embeds[0].fields[LfgEmbedIndexes.StartTime].value !== invalidDateTimeStr) {
 					let rawEventDateTime = interaction.message.embeds[0].fields[LfgEmbedIndexes.StartTime].value.split('\n')[0].split(' ');
-					utils.commonLoggers.logMessage('step1-gameSelection.ts:Line53', ('Got rawEventDateTime: '+ rawEventDateTime));
+					utils.commonLoggers.logMessage('step1-gameSelection.ts:Line53', 'Got rawEventDateTime: ' + rawEventDateTime);
 					const monthIdx = rawEventDateTime.findIndex((item) => monthsShort.includes(item.toUpperCase()));
 					prefillTime = rawEventDateTime.slice(0, monthIdx - 1).join(' ').trim();
 					prefillTimeZone = (rawEventDateTime[monthIdx - 1] || '').trim();
@@ -62,14 +62,15 @@ const execute = async (bot: Bot, interaction: Interaction) => {
 			}
 
 			//Help our European Friends
-			prefillDate = new Date().toLocaleDateString("de-CH");
+			prefillDate = new Date().toLocaleDateString('de-CH');
 			const isDayLightSavingTimeZone = isDSTActive();
-			if (isDayLightSavingTimeZone){
-				prefillTimeZone = "UTC+2"
+			if (isDayLightSavingTimeZone) {
+				prefillTimeZone = 'UTC+2';
+			} else {
+				prefillTimeZone = 'UTC+1';
 			}
-			else{
-				prefillTimeZone = "UTC+1"
-			}
+
+			prefillDescription = 'Armada Level: X. Gewünschtes Shiplevel: A-B.';
 
 			utils.commonLoggers.logMessage('step1-gameSelection.ts:64', 'Sending Interaction Response');
 			bot.helpers.sendInteractionResponse(interaction.id, interaction.token, {
