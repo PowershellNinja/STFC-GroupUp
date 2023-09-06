@@ -14,15 +14,23 @@ export const Activities: Array<Activity> = [
 				name: 'Group Armada',
 				options: [
 					{
-						name: 'Group Armada - Uncommon',
+						name: 'Faction Armada - Uncommon',
 						maxMembers: 6,
 					},
 					{
-						name: 'Group Armada - Rare',
+						name: 'Faction Armada - Rare',
 						maxMembers: 6,
 					},
 					{
-						name: 'Group Armada - Epic',
+						name: 'Faction Armada - Epic',
+						maxMembers: 6,
+					},
+					{
+						name: 'Borg Expansion Cube',
+						maxMembers: 6,
+					},
+					{
+						name: 'Swarm Armada',
 						maxMembers: 6,
 					},
 				],
