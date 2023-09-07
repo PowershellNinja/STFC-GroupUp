@@ -125,7 +125,24 @@ const parseEventTimeZone = (preParsedEventTimeZone: string): [string, string] =>
 // Takes user input Date and makes it actually usable
 const parseEventDate = (preParsedEventDate: string): [string, string, string] => {
 	const today = new Date();
-	let [parsedEventMonth, parsedEventDay, parsedEventYear] = preParsedEventDate.split(/[\s,\\/-]+/g);
+	let parsedEventMonth = "";
+	let parsedEventDay = "";
+	let parsedEventYear = "";
+
+	const splittedDateString = preParsedEventDate.split(/[\s,.\\/-]+/g);
+
+	if(preParsedEventDate.includes(".")){
+		//This is a European Date Format, assume dd.MM.yyyy
+		parsedEventDay = splittedDateString[0];
+		parsedEventMonth = splittedDateString[1];
+		parsedEventYear = splittedDateString[2];
+	}
+	else{
+		//This is not a European Date Format, assume MM.dd.yyyy
+		parsedEventMonth = splittedDateString[0];
+		parsedEventDay = splittedDateString[1];
+		parsedEventYear = splittedDateString[2];
+	}
 
 	if (isNaN(parseInt(parsedEventDay))) {
 		// User only provided one word, we're assuming it was TOMORROW, and all others will be treated as today
