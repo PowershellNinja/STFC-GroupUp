@@ -11,7 +11,7 @@ export const Activities: Array<Activity> = [
 		name: 'STFC',
 		options: [
 			{
-				name: 'Group Armada',
+				name: 'Group Armada - 6 Slots',
 				options: [
 					{
 						name: 'Faction Armada - Uncommon',
@@ -26,12 +26,61 @@ export const Activities: Array<Activity> = [
 						maxMembers: 6,
 					},
 					{
+						name: 'Cardassian Armada - Uncommon',
+						maxMembers: 6,
+					},
+					{
+						name: 'Cardassian Armada - Rare',
+						maxMembers: 6,
+					},
+					{
+						name: 'Cardassian Armada - Epic',
+						maxMembers: 6,
+					},
+					{
 						name: 'Borg Expansion Cube',
 						maxMembers: 6,
 					},
 					{
 						name: 'Swarm Armada',
 						maxMembers: 6,
+					},
+				],
+			},
+			{
+				name: 'Group Armada - 7 Slots',
+				options: [
+					{
+						name: 'Faction Armada - Uncommon',
+						maxMembers: 7,
+					},
+					{
+						name: 'Faction Armada - Rare',
+						maxMembers: 7,
+					},
+					{
+						name: 'Faction Armada - Epic',
+						maxMembers: 7,
+					},
+					{
+						name: 'Cardassian Armada - Uncommon',
+						maxMembers: 7,
+					},
+					{
+						name: 'Cardassian Armada - Rare',
+						maxMembers: 7,
+					},
+					{
+						name: 'Cardassian Armada - Epic',
+						maxMembers: 7,
+					},
+					{
+						name: 'Borg Expansion Cube',
+						maxMembers: 7,
+					},
+					{
+						name: 'Swarm Armada',
+						maxMembers: 7,
 					},
 				],
 			},
