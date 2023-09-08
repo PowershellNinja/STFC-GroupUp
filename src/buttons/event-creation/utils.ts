@@ -172,7 +172,8 @@ export const createLFGPost = (
 					text: `Created by: ${author}`,
 					iconUrl: `${config.links.creatorIcon}#${authorId}`,
 				},
-				timestamp: eventDateTime.getTime(),
+				//timestamp: eventDateTime.getTime(),
+				timestamp: (new Date()).getTime(),
 			}],
 			components: [{
 				type: MessageComponentTypes.ActionRow,
